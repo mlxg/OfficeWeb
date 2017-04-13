@@ -1,0 +1,97 @@
+/********************字体元素**********/
+.u-fc1{
+	color:#ffffff;
+}
+.u-fc2{
+	color:#333333;
+}
+.u-fc3{
+	color:#666666;
+}
+.u-fc4{
+	color:#999999;
+}
+.u-fc5{
+	color:#ff0000;
+}
+.u-fs12{
+	font-size:12px;
+}
+.u-fs14{
+	font-size:14px;
+}
+.u-fs16{
+	font-size:16px;
+}
+.u-fs18{
+	font-size:18px;
+}
+.u-fs20{
+	font-size:20px;
+}
+.u-fs20{
+    font-size:24px;
+}
+.u-fs40{
+	font-size:40px;
+}
+.u-fw{
+    font-weight: 700;
+}
+.u-ff{
+    font-family: "Microsoft YaHei";
+}
+.u-ff1{
+    font-family: "Arial";
+}
+.u-ff2{
+    font-family: Verdana;
+}
+.u-ff3{
+    font-family: "宋体";
+}
+.u-bg1{
+	background-color: #f5f5f5;
+}
+.u-bg2{
+	background-color: #ffffff;
+}
+.u-bg3{
+	background-color: #f9fafc;
+}
+.u-bdr{
+	border: 2px solid #dfdfdf;
+  background-color: #f9fafc;
+}
+/********************** icon *********************/
+.u-icon{
+	background-image: url(../images/icon.png);
+}
+.u-icon-u1{
+  background-position: -346px 0;
+}
+.u-icon-u2{
+  background-position: -305px -73px;
+}
+.u-icon-u3{
+  background-position: -345px -72px;
+}
+.u-icon-u4{
+  background-position: -299px 0;
+}
+.u-icon-u5{
+  background-position: -345px 0;
+}
+
+/* add by huhy */
+.bg-white{
+  background-color: #fff;
+}
+.inline-block{
+  display: inline-block;
+}
+.inline{
+  display: inline;
+}
+/* end */
+

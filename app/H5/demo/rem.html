@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>用rem实现的响应式布局</title>
+        <link rel="stylesheet" href="../css/rem.css">
+</head>
+<body>
+<script type="text/javascript">
+    var scale = 1 / devicePixelRatio;
+    document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+</script>
+   <div class="wrap">
+       <div class="mdHead">
+           <a href="javascript:history.back(-1);" class="back"></a>
+           <h3>最新补贴说明</h3>
+       </div>
+       <!-- 分享 -->
+       <div class="share">
+           <a href="#" class="g-share"></a>
+           <a href="#" class="w-share"></a>
+       </div>
+
+       <div class="content">
+           <p>高峰补贴、加价补贴、接单量补贴好评补贴</p>
+           <div class="tupian">
+               <img src="../images/tupian.jpg" alt="" />
+           </div>
+           <p>补贴项:高峰补贴、加价补贴、接单量补贴、接送机补贴、好好补贴。高峰期补贴指周一至周五7:00-9:00,17:00-20:00,每单补20高峰补贴、加价补贴、接单量补贴、接送机补贴、好好补贴。高峰期补贴指周一至周五7:00-9:00,17:00-20:00，每单补20元</p>
+       </div>
+
+
+       <div class="clicks">
+           <div class="sub-clicks">
+               <a href="#">点击加盟</a>
+           </div>
+       </div>
+   </div>
+</body>
+</html>

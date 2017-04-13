@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div class="letterPaper">
+		<br><br><br><br>
+		<table class='docRequest'>
+			<tr>
+				<th colspan='4'>广州七一一电子信息科技有限公司<br>人事异动表-员工确认联</th>
+			</tr>
+			<!-- <tr>
+				<td width='25%'>标题</td>
+				<td width='25%' id='title'></td>
+				<td width='25%'>紧急程度</td>
+				<td id='urgencyDegreeDisplay'></td>
+			</tr> -->
+			<tr>
+				<td>编号</td>
+				<td id='serialNo' class='tal'></td>
+				<td>异动性质</td>
+				<td id='moveNatureDisplay' class='tal'></td>
+			</tr>
+			<tr>
+				<td>申请人</td>
+				<td id='createByName' class='tal'></td>
+				<td>申请日期</td>
+				<td id='createDate' class='tal'></td>
+
+			</tr>
+			<tr>
+				<td>异动人</td>
+				<td id='cnName' class='tal'></td>
+				<td>入职日期</td>
+				<td id='entrantTime' class='tal'></td>
+			</tr>
+			<tr>
+				<td>异动情况说明：</td>
+				<td colspan="3" id='moveCaseExplain' class='tal'></td>
+			</tr>
+		</table>
+		<table class='docRequest borderTop0'>
+			<tr>
+				<th colspan="3" class='borderTop0'>变 动 情 况</th>
+			</tr>
+			<tr>
+				<td>名称</td>
+				<td>异动前</td>
+				<td>异动后</td>
+			</tr>
+			<tr>
+				<td>办公地点</td>
+				<td id='beforeWorkplaceDisplay' class='tal'></td>
+				<td id='afterWorkplaceDisplay' class='tal'></td>
+			</tr>
+			<tr>
+				<td>部  门</td>
+				<td id='beforeOfficeName' class='tal'></td>
+				<td id='afterOfficeName' class='tal'></td>
+			</tr>
+			<tr>
+				<td>职  级</td>
+				<td id='beforePositionsLevelDisplay' class='tal'></td>
+				<td id='afterPositionsLevelDisplay' class='tal'></td>
+			</tr>
+			<tr>
+				<td>职  位</td>
+				<td id='beforePositionsName' class='tal'></td>
+				<td id='afterPositionsName' class='tal'></td>
+			</tr>
+			<tr>
+				<td>月薪</td>
+				<td id='beforeMonthSalary' class='tal'></td>
+				<td id='afterMonthSalary' class='tal'></td>
+			</tr>
+			<tr>
+				<td>人力资源部审核</td>
+				<td class='tal'>
+					基本工资：<span id='beforeBaseFormalSalary'></span><br>
+					保密工资：<span id='beforeSecrecyFormalSalary'></span><br>
+					其他补贴：<span id='beforeOtherSubsidyFormalSalary'></span><br>
+					加班补贴：<span id='beforeOverSubsidyFormalSalary'></span><br>
+					午餐补助：<span id='beforeLunchSubsidyFormalSalary'></span>元/天<br>
+					绩效考核：<span id='beforeAchievementFormalSalary'></span><br>
+					合    计：<span id='beforeTotalMonthSalary'></span><br>
+				</td>
+				<td class='tal'>
+					基本工资：<span id='afterBaseFormalSalary'></span><br>
+					保密工资：<span id='afterSecrecyFormalSalary'></span><br>
+					其他补贴：<span id='afterOtherSubsidyFormalSalary'></span><br>
+					加班补贴：<span id='afterOverSubsidyFormalSalary'></span><br>
+					午餐补助：<span id='afterLunchSubsidyFormalSalary'></span>元/天<br>
+					绩效考核：<span id='afterAchievementFormalSalary'></span><br>
+					合    计：<span id='afterTotalMonthSalary'></span><br>
+				</td>
+			</tr>
+			<tr>
+				<!-- <td width='25%' class='borderTop0'>是否为部门负责人（异动后）</td>
+				<td width='25%' id='afterIsResponsible'></td> -->
+				<td>建议生效日期</td>
+				<td id='suggestEffectDate' colspan="2" class='tal'></td>
+			</tr>
+			<tr>
+				<td style='line-height: 4rem;'>员工签名确认</td>
+				<td colspan="2"></td>
+			</tr>
+		</table>
+		<!-- <table class='docRequest borderTop0'>
+			<tr>
+				<td width='25%' class='borderTop0'>是否为部门负责人（异动后）</td>
+				<td width='25%' id='afterIsResponsible'></td>
+				<td width='25%'>建议生效日期</td>
+				<td id='suggestEffectDate'></td>
+			</tr>
+		</table>
+		<table class='docRequest borderTop0'>
+			<tr>
+				<td width='25%' class='borderTop0'>员工<br>签名确认</td>
+				<td></td>
+			</tr>
+		</table> -->
+</body>
+<style>
+	html{font-family: 'e','宋体';font-size: 14px}
+	*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+	.letterPaper{width: 800px;margin: 0 auto;border: 0px solid #000;}
+	p.mainTitle{text-align: center;font-size: 2rem}
+	p.indent2words{text-indent: 2rem}
+	.pageBreaker{width: 100%;height: 50px;page-break-before:always;}
+	.vh{visibility: hidden;}
+	table.docRequest{width: 100%;border: 1px solid #000;border-collapse: collapse;}
+	table.docRequest td,th{border: 1px solid #000;text-align: center;line-height: 2rem;}
+	table.docRequest th:first-child{width: 25%;}
+	table.docRequest th:nth-child(2){width: 15%;}
+	table.salaryDetail{width: 100%;border: 1px solid #000;border-collapse: collapse;}
+	table.salaryDetail td,th{border: 1px solid #000;text-align: center;line-height: 2rem;}
+	table.salaryDetail th:first-child{width: 25%;}
+	table.welfareTreatment{width: 100%;border: 1px solid #000;border-collapse: collapse;}
+	table.welfareTreatment td,th{border: 1px solid #000;text-align: center;line-height: 2rem;}
+	table.welfareTreatment th:first-child{width: 5%;}
+	table.welfareTreatment th:nth-child(2){width: 20%;}
+	table.docRequest td,th.borderTop0{border-top: 0;}
+	table.docRequest{border-top: 0;}
+	table.docRequest td.tal{text-align: left;padding-left: 8px}
+
+</style>
+<script>
+	function getQueryObject(url) {
+		url = url == null ? window.location.href : url;
+		var search = url.substring(url.lastIndexOf("?") + 1);
+		var obj = {};
+		var reg = /([^?&=]+)=([^?&=]*)/g;
+		search.replace(reg, function(rs, $1, $2) {
+			var name = decodeURIComponent($1);
+			var val = decodeURIComponent($2);
+			val = String(val);
+			obj[name] = val;
+			return rs;
+		});
+		return obj;
+	}
+
+	var params = getQueryObject(decodeURI(window.location.href));
+	var /*title = document.getElementById('title'), 
+		urgencyDegreeDisplay = document.getElementById('urgencyDegreeDisplay'), 
+		*/serialNo = document.getElementById('serialNo'),
+		entrantTime = document.getElementById('entrantTime'),
+		createByName = document.getElementById('createByName'), 
+		createDate = document.getElementById('createDate'), 
+		cnName = document.getElementById('cnName'), 
+		moveNatureDisplay = document.getElementById('moveNatureDisplay'), 
+		moveCaseExplain = document.getElementById('moveCaseExplain'), 
+		beforeWorkplaceDisplay = document.getElementById('beforeWorkplaceDisplay'), 
+		afterWorkplaceDisplay = document.getElementById('afterWorkplaceDisplay'), 
+		beforeOfficeName = document.getElementById('beforeOfficeName'), 
+		afterOfficeName = document.getElementById('afterOfficeName'), 
+		beforePositionsLevelDisplay = document.getElementById('beforePositionsLevelDisplay'), 
+		afterPositionsLevelDisplay = document.getElementById('afterPositionsLevelDisplay'),
+		beforePositionsName = document.getElementById('beforePositionsName'), 
+		afterPositionsName = document.getElementById('afterPositionsName'), 
+		beforeMonthSalary = document.getElementById('beforeMonthSalary'), 
+		afterMonthSalary = document.getElementById('afterMonthSalary'), 
+		beforeBaseFormalSalary = document.getElementById('beforeBaseFormalSalary'); 
+		afterBaseFormalSalary = document.getElementById('afterBaseFormalSalary'); 
+		beforeSecrecyFormalSalary = document.getElementById('beforeSecrecyFormalSalary'); 
+		afterSecrecyFormalSalary = document.getElementById('afterSecrecyFormalSalary'); 
+		beforeOtherSubsidyFormalSalary = document.getElementById('beforeOtherSubsidyFormalSalary'); 
+		afterOtherSubsidyFormalSalary = document.getElementById('afterOtherSubsidyFormalSalary'); 
+		beforeOverSubsidyFormalSalary = document.getElementById('beforeOverSubsidyFormalSalary'); 
+		afterOverSubsidyFormalSalary = document.getElementById('afterOverSubsidyFormalSalary'); 
+		beforeLunchSubsidyFormalSalary = document.getElementById('beforeLunchSubsidyFormalSalary'); 
+		afterLunchSubsidyFormalSalary = document.getElementById('afterLunchSubsidyFormalSalary'); 
+		beforeAchievementFormalSalary = document.getElementById('beforeAchievementFormalSalary'); 
+		afterAchievementFormalSalary = document.getElementById('afterAchievementFormalSalary'); 
+		beforeTotalMonthSalary = document.getElementById('beforeTotalMonthSalary'); 
+		afterTotalMonthSalary = document.getElementById('afterTotalMonthSalary'); 
+		afterIsResponsible = document.getElementById('afterIsResponsible'); 
+		suggestEffectDate = document.getElementById('suggestEffectDate'); 
+
+	setData(params);
+
+
+	function setData(params) {
+		/*title.innerHTML = params.title;
+		urgencyDegreeDisplay.innerHTML = params.urgencyDegreeDisplay;*/
+		createByName.innerHTML = params.createByName;
+		entrantTime.innerHTML = params.entrantTime;
+		serialNo.innerHTML = params.serialNo;
+		createDate.innerHTML = params.createDate;
+		cnName.innerHTML = params.cnName;
+		moveNatureDisplay.innerHTML = params.moveNatureDisplay;
+		moveCaseExplain.innerHTML = params.moveCaseExplain;
+		beforeWorkplaceDisplay.innerHTML = params.beforeWorkplaceDisplay;
+		afterWorkplaceDisplay.innerHTML = params.afterWorkplaceDisplay;
+		beforeOfficeName.innerHTML = params.beforeOfficeName;
+		afterOfficeName.innerHTML = params.afterOfficeName;
+		beforePositionsLevelDisplay.innerHTML = params.beforePositionsLevelDisplay;
+		afterPositionsLevelDisplay.innerHTML = params.afterPositionsLevelDisplay;
+		beforePositionsName.innerHTML = params.beforePositionsName;
+		afterPositionsName.innerHTML = params.afterPositionsName;
+		beforeMonthSalary.innerHTML = params.beforeMonthSalary;
+		afterMonthSalary.innerHTML = params.afterMonthSalary;
+		beforeBaseFormalSalary.innerHTML = params.beforeBaseFormalSalary;
+		afterBaseFormalSalary.innerHTML = params.afterBaseFormalSalary;
+		beforeSecrecyFormalSalary.innerHTML = params.beforeSecrecyFormalSalary;
+		afterSecrecyFormalSalary.innerHTML = params.afterSecrecyFormalSalary;
+		beforeOtherSubsidyFormalSalary.innerHTML = params.beforeOtherSubsidyFormalSalary;
+		afterOtherSubsidyFormalSalary.innerHTML = params.afterOtherSubsidyFormalSalary;
+		beforeOverSubsidyFormalSalary.innerHTML = params.beforeOverSubsidyFormalSalary;
+		afterOverSubsidyFormalSalary.innerHTML = params.afterOverSubsidyFormalSalary;
+		beforeLunchSubsidyFormalSalary.innerHTML = params.beforeLunchSubsidyFormalSalary;
+		afterLunchSubsidyFormalSalary.innerHTML = params.afterLunchSubsidyFormalSalary;
+		beforeAchievementFormalSalary.innerHTML = params.beforeAchievementFormalSalary;
+		afterAchievementFormalSalary.innerHTML = params.afterAchievementFormalSalary;
+		beforeTotalMonthSalary.innerHTML = params.beforeTotalMonthSalary;
+		afterTotalMonthSalary.innerHTML = params.afterTotalMonthSalary;
+		// afterIsResponsible.innerHTML = params.afterIsResponsible;
+		suggestEffectDate.innerHTML = params.suggestEffectDate;
+	};
+
+	var HKEY_RootPath = "HKEY_CURRENT_USERSoftwareMicrosoftInternet ExplorerPageSetup";
+
+	function PageSetup_del() {
+		try {
+			var WSc = new ActiveXObject("WScript.Shell");
+			HKEY_Key = "header";
+			WSc.RegWrite(HKEY_RootPath + HKEY_Key, "");
+			HKEY_Key = "footer";
+			WSc.RegWrite(HKEY_RootPath + HKEY_Key, "");
+		} catch (e) {
+			console.log(e)
+		}
+	}
+
+	function PageSetup_set() {
+		try {
+			var WSc = new ActiveXObject("WScript.Shell");
+			HKEY_Key = "header";
+			WSc.RegWrite(HKEY_RootPath + HKEY_Key, "&w&b页码,&p/&P");
+			HKEY_Key = "footer";
+			WSc.RegWrite(HKEY_RootPath + HKEY_Key, "&u&b&d");
+		} catch (e) {}
+	}
+	PageSetup_del()
+	PageSetup_set()
+	window.print()
+</script>
+</html>

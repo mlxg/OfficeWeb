@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div class="letterPaper">
+        <p class="mainTitle">借款申请单</p>
+        <span class="appDate">申请日期：<span id="createDate"></span></span>
+        <table class='docRequest'>
+            <tr>
+                <td class='tdHead'>报销编号</td>
+                <td id='serialNo'></td>
+                <td class='tdHead'>申请人</td>
+                <td id='createName'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>申请部门</td>
+                <td id='officeName'></td>
+                <td class='tdHead'>所属项目</td>
+                <td id='projectValueDispay'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>借款金额</td>
+                <td id='loanAmount'></td>
+                <td class='tdHead'>预计还款时间</td>
+                <td id='repaymentDate'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>所属公司</td>
+                <td colspan="5" id='companyDispay'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>收款单位</td>
+                <td colspan="5" id='payeeDispay'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>申请理由</td>
+                <td colspan="5" id='applyReasons'></td>
+            </tr>
+        </table>
+        <table class='docRequest borderTop0'>
+            <tr>
+                <td class='tdHead'>付款账号名称</td>
+                <td id='loanName'></td>
+                <td class='tdHead'>付款账号</td>
+                <td id='bankNo'></td>
+            </tr>
+        </table>
+        <table class='docRequest borderTop0'>
+            <tr>
+                <td class='tdHead' style='width:25%'>付款账号开户行</td>
+                <td  style='width:76%' id='bankBranch'></td>
+            </tr>
+        </table>
+        <table class='docRequest borderTop0' id='aprTable'>
+            <!-- <tr>
+                <td style='width:5%' class='tdHead'>部门负责人审批</td>
+                <td id=''>同意</td>
+            </tr> -->
+        </table>
+</body>
+<style>
+    html{font-family: 'e','宋体';font-size: 14px}
+    *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+    .letterPaper{width: 800px;margin: 0 auto;border: 0px solid #000;}
+    p.mainTitle{text-align: center;font-size: 2rem;font-weight: bold;}
+    span.appDate{float: right;line-height: 2rem;}
+    p.indent2words{text-indent: 2rem}
+    .pageBreaker{width: 100%;height: 50px;page-break-before:always;}
+    .vh{visibility: hidden;}
+    table.docRequest{width: 100%;border: 1px solid #000;border-collapse: collapse;}
+    table.docRequest td,th{border: 1px solid #000;text-align: center;line-height: 2rem;}
+    table.docRequest td:first-child{width: 25%;}
+    table.docRequest td:nth-child(2){width: 25%;}
+    table.docRequest td:nth-child(3){width: 25%;}
+    table.salaryDetail{width: 100%;border: 1px solid #000;border-collapse: collapse;}
+    table.salaryDetail td,th{border: 1px solid #000;text-align: center;line-height: 2rem;}
+    table.salaryDetail th:first-child{width: 25%;}
+    table.welfareTreatment{width: 100%;border: 1px solid #000;border-collapse: collapse;}
+    table.welfareTreatment td,th{border: 1px solid #000;text-align: center;line-height: 2rem;}
+    table.welfareTreatment th:first-child{width: 5%;}
+    table.welfareTreatment th:nth-child(2){width: 20%;}
+    table.docRequest td,th.borderTop0{border-top: 0;}
+    table.docRequest td.tdHead{font-weight: bold;}
+    table.borderTop0{border-top: 0;}
+    table.docRequest td.tal{text-align: left;padding-left: 8px}
+
+</style>
+<script>
+    function getQueryObject(url) {
+        url = url == null ? window.location.href : url;
+        var search = url.substring(url.lastIndexOf("?") + 1);
+        var obj = {};
+        var reg = /([^?&=]+)=([^?&=]*)/g;
+        search.replace(reg, function(rs, $1, $2) {
+            var name = decodeURIComponent($1);
+            var val = decodeURIComponent($2);
+            val = String(val);
+            obj[name] = val;
+            return rs;
+        });
+        return obj;
+    }
+
+    var params = getQueryObject(decodeURI(window.location.href));
+    var createDate = document.getElementById('createDate'),
+        serialNo = document.getElementById('serialNo'),
+        createName = document.getElementById('createName'),
+        officeName = document.getElementById('officeName'),
+        projectValueDispay = document.getElementById('projectValueDispay'),
+        companyDispay = document.getElementById('companyDispay'),
+        payeeDispay = document.getElementById('payeeDispay'),
+        loanAmount = document.getElementById('loanAmount'),
+        repaymentDate = document.getElementById('repaymentDate'),
+        applyReasons = document.getElementById('applyReasons'),
+        loanName = document.getElementById('loanName'),
+        bankNo = document.getElementById('bankNo'),
+        bankBranch = document.getElementById('bankBranch');
+
+    var aprRes = setData(params);
+    var loanstatus =  params.status;
+    document.getElementById("aprTable").innerHTML= setAprTable(aprRes)
+
+
+    function setAprTable (approves) {
+      var insertHtml = ''
+      var lengths = approves.length
+      for (var i = 0; i < lengths; i++) {
+        if (i % 2 == 0) {
+          if (i == lengths - 1) {
+              if(loanstatus != 2){
+                var str = "<tr><td class='tdHead'>" + approves[i].name + "审批</td><td></td><td></td><td></td></tr>";
+                insertHtml += str;
+              }else{
+                var str = "<tr><td class='tdHead'>" + approves[i].name + "审批</td><td>同意</td><td></td><td></td></tr>";
+                insertHtml += str;
+              }
+
+          } else {
+            if (i == lengths - 1 && loanstatus != 2) {
+              var str = "<tr><td style='width: 25%' class='tdHead'>" + approves[i].name + "审批</td><td style='width: 25%' ></td>";
+              insertHtml += str;
+            } else {
+              var str = "<tr><td style='width: 25%' class='tdHead'>" + approves[i].name + "审批</td><td style='width: 25%' >同意</td>";
+              insertHtml += str;
+            }
+          }
+        } else {
+          if (i == lengths -1 && loanstatus != 2) {
+            var str = "<td class='tdHead'>"+approves[i].name+"审批</td><td></td></tr>";
+            insertHtml += str;
+          } else {
+            var str = "<td class='tdHead'>"+approves[i].name+"审批</td><td>同意</td></tr>";
+            insertHtml += str;
+          }
+        }
+      }
+      return insertHtml
+    }
+
+    function setData(params) {
+        createDate.innerHTML = params.createDate;
+        serialNo.innerHTML = params.serialNo;
+        createName.innerHTML = params.createName;
+        officeName.innerHTML = params.officeName;
+        projectValueDispay.innerHTML = params.projectValueDispay;
+        companyDispay.innerHTML = params.companyDispay;
+        payeeDispay.innerHTML = params.payeeDispay;
+        loanAmount.innerHTML = params.loanAmount;
+        repaymentDate.innerHTML = params.repaymentDate;
+        applyReasons.innerHTML = params.applyReasons;
+        loanName.innerHTML = params.loanName;
+        bankNo.innerHTML = params.bankNo;
+        bankBranch.innerHTML = params.bankBranch;
+        return ((JSON.parse(params.aprRes)).result)
+    };
+
+    var HKEY_RootPath = "HKEY_CURRENT_USERSoftwareMicrosoftInternet ExplorerPageSetup";
+
+    function PageSetup_del() {
+        try {
+            var WSc = new ActiveXObject("WScript.Shell");
+            HKEY_Key = "header";
+            WSc.RegWrite(HKEY_RootPath + HKEY_Key, "");
+            HKEY_Key = "footer";
+            WSc.RegWrite(HKEY_RootPath + HKEY_Key, "");
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    function PageSetup_set() {
+        try {
+            var WSc = new ActiveXObject("WScript.Shell");
+            HKEY_Key = "header";
+            WSc.RegWrite(HKEY_RootPath + HKEY_Key, "&w&b页码,&p/&P");
+            HKEY_Key = "footer";
+            WSc.RegWrite(HKEY_RootPath + HKEY_Key, "&u&b&d");
+        } catch (e) {}
+    }
+    PageSetup_del()
+    PageSetup_set()
+    window.print()
+</script>
+</html>

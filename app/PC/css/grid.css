@@ -1,0 +1,199 @@
+/*************头部**********/
+.g-hd{
+
+}
+/*******尾部**********/
+.g-ft{
+
+}
+/***************浮动,居中布局*****************/
+.g-fl{
+	float:left;
+}
+.g-fr{
+	float:right;
+}
+.g-tc{
+	text-align:center;
+}
+.g-tl{
+    text-align:left;
+}
+.g-tr{
+    text-align:right;
+}
+.g-pa{
+    position: absolute;
+}
+.g-pr{
+    position: relative;
+}
+.g-ps{
+    position: static;
+}
+.g-ds{
+    display: block;
+}
+.g-dn{
+    display: none;
+}
+.g-ib{
+    display: inline-block;
+}
+/****************宽度**********************/
+.g-w100{
+    width:100%
+}
+.g-w40{
+    width: 40%;
+}
+.g-w45{
+    width: 45%;
+}
+.g-w50{
+    width: 50%;
+}
+.g-w60{
+    width: 60%;
+}
+.g-w65{
+    width: 65%;
+}
+.g-width70{
+    width:70px;
+}
+.g-width100{
+    width:100px;
+}
+.g-width1000{
+    width:1000px;
+}
+.g-width1200{
+    width: 1200px;
+}
+
+/****************边距布局**********************/
+.g-marginAuto{
+	margin: 0 auto;
+}
+.g-padding0{
+    padding: 0;
+}
+.g-padding10{
+    padding: 10px;
+}
+.g-padding20{
+	padding: 20px;
+}
+.g-padding50{
+    padding: 50px;
+}
+.g-paddingLR0{
+    padding-left: 0;
+    padding-right: 0;
+}
+.g-paddingF5{
+    padding-left: 5px;
+}
+.g-paddingF10{
+    padding-left: 10px;
+}
+.g-paddingF25{
+    padding-left: 25px;
+}
+.g-paddingF40{
+    padding-left: 40px;
+}
+.g-paddingR0{
+    padding-right: 0px;
+}
+.g-paddingR5{
+    padding-right: 5px;
+}
+.g-paddingR10{
+    padding-right: 10px;
+}
+.g-paddingR15{
+    padding-right: 15px;
+}
+.g-paddingR30{
+    padding-right: 30px;
+}
+.g-paddingT20{
+    padding-top: 20px;
+}
+.g-paddingT25{
+    padding-top: 25px;
+}
+.g-paddingT30{
+	padding-top: 30px;
+}
+.g-paddingB20{
+    padding-bottom: 20px;
+}
+.g-marginT5{
+	margin-top: 5px;
+}
+.g-marginT10{
+	margin-top: 10px;
+}
+.g-marginT15{
+    margin-top: 15px;
+}
+.g-marginT20{
+    margin-top: 20px;
+}
+.g-marginT30{
+	margin-top: 30px;
+}
+.g-marginT50{
+    margin-top: 50px;
+}
+.g-marginT100{
+    margin-top: 100px;
+}
+.g-marginR5{
+	margin-right: 5px;
+}
+.g-marginR15{
+	margin-right: 15px;
+}
+.g-marginR20{
+    margin-right: 20px;
+}
+.g-marginR30{
+    margin-right: 30px;
+}
+.g-marginL5{
+	margin-left: 5px;
+}
+.g-marginL10{
+	margin-left: 10px;
+}
+.g-marginL25{
+    margin-left: 25px;
+}
+.g-marginL30{
+    margin-left: 30px;
+}
+.g-marginL50{
+    margin-left: 50px;
+}
+.g-marginL100{
+    margin-left: 100px;
+}
+.g-marginL150{
+    margin-left: 150px;
+}
+.g-marginL50{
+    margin-left: 50px;
+}
+.g-marginL345{
+    margin-left: 345px;
+}
+.g-marginB10{
+    margin-bottom: 10px;
+}
+.g-marginB20{
+	margin-bottom: 20px;
+}

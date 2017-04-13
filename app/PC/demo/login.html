@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="keywords" content="星办公OA系统"/>
+    <meta name="description" content="星办公 OA"/>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+</head>
+<body>
+<div class="login">
+    <div class="logo g-tc">
+        <img src="../images/logo.png">
+    </div>
+    <div class="main">
+        <div class="nav_bar">
+            <ul>
+                <li class="current">账号登录</li>
+                <li>手机登录</li>
+            </ul>
+        </div>
+        <div class="nav_list">
+            <ul>
+                <li>
+                    <form id="pcLogin" action="" method="post">
+                        <div class="user_name">
+                            <input id="Username" class="icon" name="username" type="text" placeholder="请输入用户名" maxlength="40">
+                        </div>
+                        <div class="password">
+                            <input id="Password" class="icon" name="password" type="password" placeholder="请输入密码" maxlength="20">
+                            <input id="Type" type="hidden" name="type" value="0">
+                        </div>
+                        <div class="rember">
+                            <label><input type="checkbox">记住我</label>
+                            <a href="">忘记密码？</a>
+                        </div>
+                        <div class="login_btn btn1">
+                            <p>登录</p>
+                        </div>
+                    </form>
+                </li>
+                <li>
+                    <form id="mLogin" action="" method="post">
+                        <div class="p_num">
+                            <input type="text" class="icon" placeholder="输入手机号" maxlength="11" id="mobile" name="mobile"/>
+                        </div>
+                        <div class="ver_code">
+                            <div class="ver_code_l">
+                                <input type="text" class="icon" placeholder="输入验证码" maxlength="4" id="verificationCode" name="verificationCode"/>
+                                <input id="Type" type="hidden" name="type" value="1">
+                            </div>
+                            <input class="ver_code_r" type="button" value="获取验证码" id=""/>
+                        </div>
+                        <div class="login_btn btn2">
+                            <p>登录</p>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+            <div class="prompt">
+                <p class="icon">错误：密码错误</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>广州七一一电子信息科技有限公司 All Rights Reserved.</p>
+</div>
+
+<script type="text/javascript" src="../static/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../static/modules/login/js/login.js"></script>
+<script type="text/javascript" src="../static/common/common_service.js"></script>
+<script src="https://s11.cnzz.com/z_stat.php?id=1259979028&web_id=1259979028" language="JavaScript"></script>
+<script>
+    //登录切换
+    $(".nav_bar ul li").click(function(){
+        $(this).addClass("current").siblings(".nav_bar ul li").removeClass("current");
+        $(".nav_list ul > li:eq('"+ $(this).index() +"')").show().siblings(".nav_list ul > li").hide();
+    });
+    //点击文本框后隐藏错误提示
+    $(".nav_list input").focus(function () {
+        $(".prompt").hide();
+    })
+</script>
+</body>
+</html>

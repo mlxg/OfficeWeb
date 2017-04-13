@@ -1,0 +1,44 @@
+@media (max-width: 1366px){
+    .g-hd,.m-nav li,.m-logo{
+        height: 60px;
+    }
+    .m-logo{
+      background: url('../images/mlogo200x60.png') no-repeat;
+    }
+    .g-bd{
+        padding-top: 60px;
+    }
+    .m-nav li a{
+        height: 60px;
+        font-size: 14px;
+    }
+    .m-nav li i {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 6px auto 2px;
+    }
+    .u-icon-u1{
+        background-position: -346px 0;
+    }
+    .u-icon-u2{
+        background-position: -305px -73px;
+    }
+    .u-icon-u3{
+        background-position: -345px -72px;
+    }
+    .u-icon-u4{
+        background-position: -299px 0;
+    }
+    .m-user{
+        margin-top: 10px;
+    }
+    .m-search{
+        margin-top: 10px;
+    }
+}
+@media (min-width: 1367px){
+  .m-logo{
+    background: url('../images/mlogo200x60.png') no-repeat;
+  }
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div class="letterPaper">
+        <p class="mainTitle">费用报销申请单</p>
+        <span class="appDate">申请日期：<span id="createDate"></span></span>
+        <table class='docRequest'>
+            <tr>
+                <td class='tdHead'>报销编号</td>
+                <td id='serialNo'></td>
+                <td class='tdHead'>申请人</td>
+                <td id='createByName'></td>
+                <td class='tdHead'>申请部门</td>
+                <td id='applyOfficeName'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>付款用途</td>
+                <td id='typeName'></td>
+                <td class='tdHead'>报销科目</td>
+                <td id='paymentCategoryDisplay'></td>
+                <td class='tdHead'>所属项目</td>
+                <td id='projectTypeDisplay'></td>
+            </tr>
+
+            <tr id='trBTrip'>
+                <td class='tdHead'>出差地点</td>
+                <td colspan="3" id='evectionSite'></td>
+                <td class='tdHead'>出差时间</td>
+                <td id='evectionStart'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>所属公司</td>
+                <td colspan="5" id='belongCompanyDisplay'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>收款单位</td>
+                <td colspan="5" id='payeeTypeDisplay'></td>
+            </tr>
+            <tr id='trLoan'>
+                <td class='tdHead'>是否借款</td>
+                <td id='expenseLoanDisplay'></td>
+                <td class='tdHead'>借款金额</td>
+                <td id='loanAmount'></td>
+                <td class='tdHead'>预计还款时间</td>
+                <td id='repaymentDate'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>报销金额</td>
+                <td id='expenseAmount'></td>
+                <td class='tdHead'>实际应付金额</td>
+                <td id='actualExpenseAmount'></td>
+                <td class='tdHead'>发票张数</td>
+                <td id='invoiceAmount'></td>
+            </tr>
+            <tr>
+                <td class='tdHead'>申请理由</td>
+                <td colspan="5" id='expenseReason'></td>
+            </tr>
+        </table>
+        <table class='docRequest borderTop0'>
+            <tr>
+                <td class='tdHead' style='width: 16.7%'>付款账号名称</td>
+                <td id='accountName' style='width: 33.3%'></td>
+                <td class='tdHead' style='width: 16.7%'>付款账号</td>
+                <td id='accountNumber' style='width: 83.3%'></td>
+            </tr>
+        </table>
+        <table class='docRequest borderTop0'>
+            <tr>
+                <td class='tdHead' style='width: 16.7%'>付款账号开户行</td>
+                <td style='width: 83.3%'id='bankBranch'></td>
+            </tr>
+        </table>
+        <table class='docRequest borderTop0' id='aprTable'>
+            <!-- <tr>
+                <td style='width:5%' class='tdHead'>部门负责人审批</td>
+                <td id=''>同意</td>
+            </tr> -->
+        </table>
+</body>
+<style>
+    html{font-family: 'e','宋体';font-size: 14px}
+    *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+    .letterPaper{width: 800px;margin: 0 auto;border: 0px solid #000;}
+    p.mainTitle{text-align: center;font-size: 2rem;font-weight: bold;margin: 0;}
+    span.appDate{float: right;line-height: 2rem;}
+    p.indent2words{text-indent: 2rem}
+    .pageBreaker{width: 100%;height: 50px;page-break-before:always;}
+    .vh{visibility: hidden;}
+    table.docRequest{width: 100%;border: 1px solid #000;border-collapse: collapse;}
+    table.docRequest td,th{border: 1px solid #000;text-align: center;line-height: 2rem;}
+    table.docRequest td:first-child{width: 16.7%;}
+    table.docRequest td:nth-child(2){width: 16.7%;}
+    table.docRequest td:nth-child(3){width: 16.7%;}
+    table.docRequest td:nth-child(4){width: 16.7%;}
+    table.docRequest td:nth-child(5){width: 16.7%;}
+    table.salaryDetail{width: 100%;border: 1px solid #000;border-collapse: collapse;}
+    table.salaryDetail td,th{border: 1px solid #000;text-align: center;line-height: 2rem;}
+    table.salaryDetail th:first-child{width: 25%;}
+    table.welfareTreatment{width: 100%;border: 1px solid #000;border-collapse: collapse;}
+    table.welfareTreatment td,th{border: 1px solid #000;text-align: center;line-height: 2rem;}
+    table.welfareTreatment th:first-child{width: 5%;}
+    table.welfareTreatment th:nth-child(2){width: 20%;}
+    table.docRequest td,th.borderTop0{border-top: 0;}
+    table.docRequest td.tdHead{font-weight: bold;}
+    table.borderTop0{border-top: 0;}
+    table.docRequest td.tal{text-align: left;padding-left: 8px}
+
+</style>
+<script>
+    function getQueryObject(url) {
+        url = url == null ? window.location.href : url;
+        var search = url.substring(url.lastIndexOf("?") + 1);
+        var obj = {};
+        var reg = /([^?&=]+)=([^?&=]*)/g;
+        search.replace(reg, function(rs, $1, $2) {
+            var name = decodeURIComponent($1);
+            var val = decodeURIComponent($2);
+            val = String(val);
+            obj[name] = val;
+            return rs;
+        });
+        return obj;
+    }
+
+    var params = getQueryObject(decodeURI(window.location.href));
+    var createDate = document.getElementById('createDate'),
+        serialNo = document.getElementById('serialNo'),
+        createByName = document.getElementById('createByName'), 
+        applyOfficeName = document.getElementById('applyOfficeName'), 
+        typeName = document.getElementById('typeName'), 
+        paymentCategoryDisplay = document.getElementById('paymentCategoryDisplay'), 
+        projectTypeDisplay = document.getElementById('projectTypeDisplay'), 
+        evectionSite = document.getElementById('evectionSite'), 
+        evectionStart = document.getElementById('evectionStart'), 
+        belongCompanyDisplay = document.getElementById('belongCompanyDisplay'), 
+        payeeTypeDisplay = document.getElementById('payeeTypeDisplay'), 
+        expenseLoanDisplay = document.getElementById('expenseLoanDisplay'), 
+        loanAmount = document.getElementById('loanAmount'), 
+        repaymentDate = document.getElementById('repaymentDate'), 
+        expenseAmount = document.getElementById('expenseAmount'), 
+        actualExpenseAmount = document.getElementById('actualExpenseAmount'), 
+        invoiceAmount = document.getElementById('invoiceAmount'), 
+        expenseReason = document.getElementById('expenseReason'), 
+        accountName = document.getElementById('accountName'), 
+        accountNumber = document.getElementById('accountNumber'), 
+        bankBranch = document.getElementById('bankBranch'),
+
+        trBTrip = document.getElementById('trBTrip'),
+        trLoan = document.getElementById('trLoan');
+
+
+    var aprRes = setData(params);
+    document.getElementById("aprTable").innerHTML= setAprTable(aprRes)
+
+    function setAprTable (approves) {
+        var insertHtml = ''
+        for(var key in approves){
+            if (key%2==0) {
+                if (key == approves.length-1) {
+                    var str = "<tr><td class='tdHead'>"+approves[key].name+"审批</td><td>同意</td><td></td><td></td></tr>";
+                    insertHtml += str;
+                }else{
+                    var str = "<tr><td style='width: 16.7%' class='tdHead'>"+approves[key].name+"审批</td><td style='width: 33.3%' >同意</td>";
+                    insertHtml += str;
+                };
+            }else{
+                if (key == approves.length-1) {
+                    var str = "<td class='tdHead'>"+approves[key].name+"审批</td><td>同意</td></tr>";
+                    insertHtml += str;
+                }else{
+                    var str = "<td style='width: 16.7%' class='tdHead'>"+approves[key].name+"审批</td><td style='width: 33.3%'>同意</td></tr>";
+                    insertHtml += str;
+                };
+            };
+        }
+        return insertHtml
+    }
+
+    function setData(params) {
+        createDate.innerHTML = params.createDate;
+        serialNo.innerHTML = params.serialNo;
+        createByName.innerHTML = params.createByName;
+        applyOfficeName.innerHTML = params.applyOfficeName;
+        typeName.innerHTML = params.typeName;
+        paymentCategoryDisplay.innerHTML = params.paymentCategoryDisplay;
+        projectTypeDisplay.innerHTML = params.projectTypeDisplay;
+        if (!!params.evectionSite) {
+            evectionSite.innerHTML = params.evectionSite;
+            evectionStart.innerHTML = params.evectionStart;
+        }else{
+            trBTrip.innerHTML = ''
+        };
+
+        belongCompanyDisplay.innerHTML = params.belongCompanyDisplay;
+        payeeTypeDisplay.innerHTML = params.payeeTypeDisplay;
+        expenseLoanDisplay.innerHTML = params.expenseLoanDisplay;
+        loanAmount.innerHTML = params.loanAmount;
+        repaymentDate.innerHTML = params.repaymentDate;
+        expenseAmount.innerHTML = params.expenseAmount;
+        actualExpenseAmount.innerHTML = params.actualExpenseAmount;
+        invoiceAmount.innerHTML = params.invoiceAmount;
+        expenseReason.innerHTML = params.expenseReason;
+        accountName.innerHTML = params.accountName;
+        accountNumber.innerHTML = params.accountNumber;
+        bankBranch.innerHTML = params.bankBranch;
+        return (JSON.parse(params.aprRes)).result
+    };
+
+    var HKEY_RootPath = "HKEY_CURRENT_USERSoftwareMicrosoftInternet ExplorerPageSetup";
+
+    function PageSetup_del() {
+        try {
+            var WSc = new ActiveXObject("WScript.Shell");
+            HKEY_Key = "header";
+            WSc.RegWrite(HKEY_RootPath + HKEY_Key, "");
+            HKEY_Key = "footer";
+            WSc.RegWrite(HKEY_RootPath + HKEY_Key, "");
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    function PageSetup_set() {
+        try {
+            var WSc = new ActiveXObject("WScript.Shell");
+            HKEY_Key = "header";
+            WSc.RegWrite(HKEY_RootPath + HKEY_Key, "&w&b页码,&p/&P");
+            HKEY_Key = "footer";
+            WSc.RegWrite(HKEY_RootPath + HKEY_Key, "&u&b&d");
+        } catch (e) {}
+    }
+    PageSetup_del()
+    PageSetup_set()
+    window.print()
+</script>
+</html>

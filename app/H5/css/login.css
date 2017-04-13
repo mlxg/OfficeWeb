@@ -1,0 +1,7 @@
+.login_form .public_errMsg:after {
+    width: 54%;
+    text-align: right;
+    position: absolute;
+    top: 1px;
+    left: 166px;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>星办公</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
+    <link href="../../css/reset.css" rel="stylesheet">
+    <link href="../../css/grid.css" rel="stylesheet">
+    <link href="../../css/unit.css" rel="stylesheet">
+    <link href="../../css/module.css" rel="stylesheet">
+    <link href="../../css/media.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="g-hd">
+    <div class="m-logo g-fl">
+        <a href="">logo</a>
+    </div>
+    <ul class="m-nav g-fl">
+        <li class="active">
+            <a class="" href="">
+                <i class="u-icon u-icon-u1"></i>流程中心
+            </a>
+        </li>
+        <li>
+            <a class="" href="">
+                <i class="u-icon u-icon-u2"></i>人力资源
+            </a>
+        </li>
+        <li>
+            <a class="" href="">
+                <i class="u-icon u-icon-u3"></i>个人中心
+            </a>
+        </li>
+        <li>
+            <a class="" href="">
+                <i class="u-icon u-icon-u4"></i>系统管理
+            </a>
+        </li>
+    </ul>
+    <div class="m-user g-fr g-marginR30">
+        <div class="name g-fl">
+            <img src="../../images/userimg.png" width="34" height="34" />
+            <span class="g-paddingF10">马小刚</span>
+        </div>
+        <div class="message g-fl g-marginL30 g-pr">
+            <i class="u-icon"></i>
+            <span>10</span>
+        </div>
+        <div class="setting g-fl g-marginL25">
+            <i class="u-icon"></i>
+        </div>
+    </div>
+    <div class="m-search g-fr">
+        <input class="u-icon" placeholder="查找通讯录，按姓名或按技能">
+    </div>
+</div>
+<div class="g-bd">
+    <div class="m-list">
+        <h3 class="u-icon">流程中心</h3>
+        <ul>
+            <li class="active"><a href="">待办事宜</a></li>
+            <li><a href="">新建流程</a></li>
+            <li><a href="">我的申请</a></li>
+            <li class="active"><a href="">我的经办</a></li>
+            <li><a href="">查询流程</a></li>
+            <li><a href="">流程统计</a></li>
+        </ul>
+    </div>
+    <div class="m-conter">
+        <h2 class="g-tc u-fs20 g-marginB20">张三的晚餐补贴申请</h2>
+        <div class="form-group">
+            <p>提示：拟稿申请----请按要求填写表单，并在当月5号前完成提交，以避免延误工资发放。</p>
+        </div>
+        <form class="g-marginT20 clearfix">
+            <div class="g-padding20 u-bdr">
+                <div class="form-group clearfix">
+                    <label for="" class="col-sm-2 control-label">编号：</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" readonly placeholder="" value="WCSQ20160704001">
+                    </div>
+                    <label for="" class="col-sm-2 control-label">所属项目：</label>
+                    <div class="col-sm-4">
+                        <select class="form-control">
+                            <option>星星打车</option>
+                            <option>汽车金融</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group clearfix">
+                    <label for="" class="col-sm-2 control-label">紧急程度：</label>
+                    <div class="col-sm-4">
+                        <select class="form-control">
+                            <option>正常</option>
+                            <option>重要</option>
+                            <option>紧急</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group g-marginB20 clearfix ">
+                    <label for="" class="col-sm-2 control-label">晚餐补贴月份：</label>
+                    <div class="col-sm-10">
+                        <span class="writing">2016年7月</span>
+                    </div>
+                </div>
+                <div class="form-group g-marginB20 clearfix ">
+                    <label for="" class="col-sm-2 control-label">晚餐补贴明细（25元/天）：</label>
+                    <div class="col-sm-10">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>时间</th>
+                                    <th>上班时间</th>
+                                    <th>下班时间</th>
+                                    <th>超出时长</th>
+                                    <th>操作
+                                        <input type="checkbox" />
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>7.1（周五）</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="checkbox" /></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="form-group clearfix">
+                    <label for="" class="col-sm-2 control-label">上传附件：</label>
+                    <div class="col-sm-4">
+                        <input type="file" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="form-group g-tc g-marginT20">
+            <button type="button" class="btn btn-primary g-marginR30">提交</button>
+            <button type="button" class="btn btn-default">取消</button>
+        </div>
+    </div>
+</div>
+<div class="g-ft">
+
+</div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>流程中心-查询流程</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="keywords" content="星办公OA系统" />
+        <meta name="description" content="星办公 OA" />
+        <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="/static/bootstrap/3.3.6/css/bootstrap-datetimepicker.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/processCenter.css" />
+        <script type="text/javascript" src="/static/jquery/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/static/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/bootstrap/3.3.6/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="/static/bootstrap/3.3.6/js/bootstrap-datepicker.zh-CN.js"></script>
+	</head>
+	<body>
+		<section class="query_flow">
+        	<div class="module_title">
+                <h1>查询流程</h1>
+            </div>
+        	<div class="query_bar">
+            	<form action="" method="post" name="">
+                    <ul>
+                        <li>
+                            <label>流程类型：</label>
+                            <select>
+                                <option value="1">文件审批申请</option>
+                                <option value="2">文件审批完成</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>申请部门：</label>
+                            <input type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <label>文件状态：</label>
+                            <select>
+                                <option value="1">全部</option>
+                                <option value="2">在办</option>
+                                <option value="3">办毕</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>申请人：</label>
+                            <input type="text" maxlength="10">
+                            <span class="query_icon"></span>
+                        </li>
+                        <li>
+                            <label>办理状态：</label>
+                            <select>
+                                <option value="1">全部</option>
+                                <option value="2">正常</option>
+                                <option value="3">超时</option>
+                            </select>
+                        </li>
+                        <li>
+                        	<label>申请日期：</label>
+                            <input class="form-control form_date" type="text" value="" readonly>
+                            <i>-</i>
+                            <input class="form-control form_date" type="text" value="" readonly>
+                        </li>
+                    </ul>
+                    <div class="btn_bar">
+                    	<button class="query_btn">查询</button>
+                        <button class="reset_btn">重置</button>
+                    </div>
+                </form>
+            </div>
+            <div class="transaction_applylist">
+            	<table>
+                	<thead>
+                    	<tr>
+                        	<th>紧急程度</th>
+                            <th>标题</th>
+                            <th>申请日期</th>
+                            <th>申请部门</th>
+                            <th>申请人</th>
+                            <th>当前状态</th>
+                            <th>当前办理人</th>
+                            <th>当前节点办理时限</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	<tr>
+                        	<td>紧急</td>
+                            <td><a href="#">张三的文件审批申请</a></td>
+                            <td>2016-07-30</td>
+                            <td>人力资源部</td>
+                            <td>张三</td>
+                            <td>在办</td>
+                            <td>李四</td>
+                            <td>0.5天</td>
+                            <td class="operate">
+                            	<span class="urge">催办</span>
+                                <span class="repeal">撤销</span>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>紧急</td>
+                            <td><a href="#">张三的文件审批申请</a></td>
+                            <td>2016-07-30</td>
+                            <td>人力资源部</td>
+                            <td>张三</td>
+                            <td>在办</td>
+                            <td>李四</td>
+                            <td>0.5天</td>
+                            <td class="operate">
+                            	<span class="urge">催办</span>
+                                <span class="repeal">撤销</span>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>紧急</td>
+                            <td><a href="#">张三的文件审批申请</a></td>
+                            <td>2016-07-30</td>
+                            <td>人力资源部</td>
+                            <td>张三</td>
+                            <td>在办</td>
+                            <td>李四</td>
+                            <td>0.5天</td>
+                            <td class="operate">
+                            	<span class="urge">催办</span>
+                                <span class="repeal">撤销</span>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>紧急</td>
+                            <td><a href="#">张三的文件审批申请</a></td>
+                            <td>2016-07-30</td>
+                            <td>人力资源部</td>
+                            <td>张三</td>
+                            <td>在办</td>
+                            <td>李四</td>
+                            <td>0.5天</td>
+                            <td class="operate">
+                            	<span class="urge">催办</span>
+                                <span class="repeal">撤销</span>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>紧急</td>
+                            <td><a href="#">张三的文件审批申请</a></td>
+                            <td>2016-07-30</td>
+                            <td>人力资源部</td>
+                            <td>张三</td>
+                            <td>在办</td>
+                            <td>李四</td>
+                            <td>0.5天</td>
+                            <td class="operate">
+                            	<span class="urge">催办</span>
+                                <span class="repeal">撤销</span>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>紧急</td>
+                            <td><a href="#">张三的文件审批申请</a></td>
+                            <td>2016-07-30</td>
+                            <td>人力资源部</td>
+                            <td>张三</td>
+                            <td>在办</td>
+                            <td>李四</td>
+                            <td>0.5天</td>
+                            <td class="operate">
+                            	<span class="urge">催办</span>
+                                <span class="repeal">撤销</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        	</div>
+        </section>
+        <div class="urge_popup">
+        	<div class="popup_box">
+            	<h1>催办信息</h1>
+                <ul>
+                	<li>
+                    	<label>被催办人：</label>
+                        <span>老王</span>
+                    </li>
+                    <li>
+                    	<label>正文描述：</label>
+                        <textarea rows="5" cols="50" placeholder="您好！请尽快完成对《标题》的审批工作。催办人：老王"></textarea>
+                    </li>
+                </ul>
+                <div class="btn_bar">
+                	<button class="send">发送</button>
+                    <button class="cancel">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="repeal_popup">
+        	<div class="popup_box">
+            	<h1>撤销提示</h1>
+                <div class="repeal_prompt">
+                	<p>撤销<span>《文件标题》</span></p>
+                    <p>文件撤销后，将无法恢复！</p>
+                </div>
+                <div class="btn_bar">
+                	<button class="send">发送</button>
+                    <button class="cancel">取消</button>
+                </div>
+            </div>
+        </div>
+		<script type="text/javascript">
+        	$('.form_date').datetimepicker({
+				language:  'zh-CN',
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				minView: 2,
+				forceParse: 0
+			});
+        </script>
+	</body>
+</html>
